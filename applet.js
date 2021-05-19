@@ -15,10 +15,11 @@ MyApplet.prototype = {
         
         this.set_applet_tooltip(_("Click to mute/unmute"));
         
-        Main.keybindingManager.addHotKey(this.uuid, "<Super>m", Lang.bind(this, this.on_applet_clicked));
+        Main.keybindingManager.addHotKey("mute-indicator-shortcut-super-m", "<Super>m", Lang.bind(this, this.on_applet_clicked));
+        Main.keybindingManager.addHotKey("mute-indicator-shortcut-pause", "Pause", Lang.bind(this, this.on_applet_clicked));
         this.set_not_muted_icon();
         this.is_audio_muted();
-        
+
         this.refresh_loop();
     },
 
