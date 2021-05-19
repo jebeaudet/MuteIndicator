@@ -10,4 +10,4 @@ If the icon is green, you're not muted.
 If the icon is red, you're muted globally!
 
 ## How does it work
-Under the hood, it uses the command `amixer set Capture toggle` to toggle between muted and unmuted. If you do this command, the applet will get out of sync so beware!!
+Under the hood, it uses the command `amixer set Capture toggle` to toggle between muted and unmuted. The command is triggered by the `Super + m` shortcut. There's also a reconliation loop every second so if the command is executed from the shell directly, the applet will get in sync within the second to show you the real mute status.

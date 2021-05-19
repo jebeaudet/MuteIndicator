@@ -18,6 +18,15 @@ MyApplet.prototype = {
         Main.keybindingManager.addHotKey(this.uuid, "<Super>m", Lang.bind(this, this.on_applet_clicked));
         this.set_not_muted_icon();
         this.is_audio_muted();
+        
+        this.refresh_loop();
+    },
+
+    refresh_loop: function() {
+        Mainloop.timeout_add(1000, () => {
+            this.is_audio_muted();
+            this.refresh_loop();
+        });
     },
 
     is_audio_muted: function() {
